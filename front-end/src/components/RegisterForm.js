@@ -51,7 +51,7 @@ function RegisterForm({history,props}) {
         var url_state = "state="+statecode+"&"
         var url_zipcode = "zipcode="+zipcode+"&"
         url_zipcode = url_zipcode.replaceAll(" ", "+")
-        const key="key=71118511187558468"
+        const key=`key=${process.env.REACT_APP_KEY}`
         const url = "https://us-street.api.smartystreets.com/street-address?" 
         const res = url.concat(url_street1,url_street2,url_city,url_state,url_zipcode,key) 
         let results = await fetch(res)
